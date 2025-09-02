@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+         @keyframes slider{
+            0%{
+                position :relative;
+                left : 0%;
+            }
+            50%{
+                position :relative;
+                left : -60%; 
+            }
+                
+            100%{
+                position :relative;
+                left : -120%;
+            }
+        }
+        #blockpage{
+            
+            padding: 5%;
+            margin-left: 10%;
+            width: 80%;
+            height: 100%;
+
+            .slider{
+                background-color: white;
+                border-radius: 10px;
+                height : 30vh;
+                overflow: hidden;
+                text-align: center;
+                display: flex;
+                justify-content: space-between;
+                padding-left: 2%;
+                padding-top: 4%;
+                margin-bottom: 5%;
+                .slid{
+                    color : black;
+                    img{
+                        margin-left : 30%;
+                        width: 100px;
+                    }
+                }
+            }
+        }
+        body{
+            background-color: rgba(0, 0, 0, 0.741);
+            color : white;
+        }
+
+        .form-enregistrement{
+            text-align: center;
+        }
+        h1,h2{
+            text-align: center;
+        }
+        h1{
+            margin-bottom : 5%;
+        }
+        h2{
+            margin-top : 5%;
+        }
+        .recherche{
+            margin-left : 5%;
+        }
+        .lastestDocs{
+            display: flex;
+            justify-content: space-around ;
+            div{
+                background-color: white;
+                color : black;
+                padding : auto;
+                width : 30%;
+                padding : 5%; 
+                text-align : center;
+                border-radius: 10px;
+            }div:hover{
+                    background-color: rgb(0, 166, 255);
+                    transition: background-color .5s;
+                    a{
+                        color : white;
+                    }
+                }
+            a{
+                text-decoration: none;
+            }
+
+            img{
+                width: 50%;
+                height: 50%;
+            }
+        }
+
+        .results{
+                display: grid;
+                grid-template-columns: repeat(3, 25%);
+                padding-left: 15%;
+                
+                div{
+                    background-color: white;
+                    color : black;
+                    text-align : center;
+                    border-radius: 10px;
+                    margin-right : 10%;
+                    margin-bottom : 10%;
+                    a{
+                        text-decoration: none;
+                    }
+
+                    img{
+                        width: 50%;
+                        height: 50%;
+                    }
+                }div:hover{
+                    background-color: rgb(0, 166, 255);
+                    transition: background-color .5s;
+                    a{
+                        color : white;
+                    }
+                }
+
+
+            }
+            
+
+
+    </style>
+    <script src="monjs.js" defer></script>
+    
+</head>
+<body>
+    
+    <div id="blockpage">
+
+        <header>
+
+        </header>
+        <section>
+
+            <div class="slider d-flex">
+                <div class="slid"><img src="aj.png" alt=""class="d-block"><h3>Ajouter un document</h3></div>
+                <div class="slid"><img src="edit.png" alt=""class="d-block"><h3>Modifier un document</h3></div>
+                <div class="slid"><img src="delete.png" alt=""class="d-block"><h3>Supprimer un document</h3></div>
+            </div>
+
+            <h1> Bienvenu sur l'application de recherche (ElasticSearch)</h1>
+
+            <article>
+
+                <form action="home.html" class="d-flex mt-4 form-search">
+                    <input type="text" id="recherche" name="recherche" class="form-control" placeholder="Entrer le texte à rechercher">
+                    <button class="btn btn-primary recherche">Rechercher</button>
+                </form>
+                <h2>Résultats de la recherche : </h2>
+                <div class="results mt-5">
+                    
+                    <div class="result">
+
+                    </div>
+                </div>
+
+            </article>
+
+            <h2 class="mt-5">Les 3 derniers documents ajoutés: </h2>
+            <article class="lastestDocs mt-5">
+                
+            </article>
+
+            <article>
+
+           
+                <h2>Formulaire d'enregistrement d'un document</h2>
+                <form action="home.html" class="mt-5 form-enregistrement">
+                    <input type="text" name="nom-doc" id="nom" placeholder="Nom du document" required class="form-control">
+                    <input type="file" name="doc" id="doc" placeholder="Document"  class="form-control mt-4">
+                    <label for="type" class="mt-4 mb-4" style="font-size: 1.1em;">Type du document : </label>
+                    <select name="type" id="type" class="form-control">
+                        <option value="CV">CV</option>
+                        <option value="fiche de poste">Fiche de poste</option>
+                        <option value="evalua on annuelle">Evaluation annuelle</option>
+                    </select>
+
+                    <button class="btn btn-primary mt-4" type="submit">Enregistrer le document</button>
+                </form>
+            
+            </article>
+
+        </section>
+
+    </div>
+</body>
+</html>
